@@ -1,5 +1,5 @@
 # DataStructuresCourse_technion_project1
-this is a Tehcnion data Structures course home work project number one. please read the README file for elaborated description
+This is a Tehcnion data Structures course home work project number one. please read the README file for elaborated description
 
 the project "question" / requirements :
 StaticEye is a company that develops Autonomy cars.
@@ -72,6 +72,7 @@ n is the number of the segments in the picture
 
 space complexity:O(k * n) in the worst case, when k is the number of the photoes in the system and
 n is the number of the segments in the picture
+
 
 
 solution sort explenation:
