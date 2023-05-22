@@ -19,25 +19,37 @@ A data structure is required to implement the following operations:
 
 void * Init(int segments)
 Time complexity: O(1)
+
 Return value:ptr to data structore or NULL in case of a failure
 
+
 StatusType AddImage(void *DS, int imageID)
+
 Time complexity:O(log(k)+n) in the worst case, when k is the number of the photoes in the system and
 n is the number of the segments in the picture
+
 
 StatusType DeleteImage(void *DS, int imageID)
+
 Time complexity:O(log(k)+n) in the worst case, when k is the number of the photoes in the system and
 n is the number of the segments in the picture
+
 
 StatusType AddLabel(void *DS, int imageID, int segmentID, int label)
+
 Time complexity:O(log(k)+n) in the worst case, when k is the number of the photoes in the system and
 n is the number of the segments in the picture
 
-StatusType GetLabel(void *DS, int imageID, int segmentID, int *label)
+
+StatusType GetLabel(void *DS, int imageID, int segmentID, int *labl)
+
 Time complexity:O(log(k)) in the worst case, when k is the number of the photoes in the system.
 
+
 StatusType DeleteLabel(void *DS, int imageID, int segmentID)
+
 Time complexity:O(log(k)) in the worst case, when k is the number of the photoes in the system.
+
 
 StatusType GetAllUnLabeledSegments(void *DS, int imageID, int **segments,
 int* numOfSegments)
@@ -45,18 +57,22 @@ int* numOfSegments)
 Time complexity:O(log(k)+s) in the worst case, when k is the number of the photoes in the system and
 n is the number of the not-tag segments in the picture
 
+
 StatusType GetAllSegmentsByLabel(void *DS, int label, int **images, int **segments, int
 *numOfSegments)
 
 Time complexity: O(k * n) in the worst case, when k is the number of the photoes in the system and
 n is the number of the segments in the picture
 
+
 void Quit(void **DS)
 
 Time complexity: O(k * n) in the worst case, when k is the number of the photoes in the system and
 n is the number of the segments in the picture
+
 space complexity:O(k * n) in the worst case, when k is the number of the photoes in the system and
 n is the number of the segments in the picture
+
 
 solution sort explenation:
 The segments will be saved in a variable in the structure. And we will create a binary search tree whose keys will be the imageID. At each node in the tree we will save the imageID, an array of segment size, and two linked lists, one for all the untagged areas and the other for the tagged areas. The lists are lists of image_data, a variable that stores the image ID, the segment and the labeling of the image in the aforementioned segment.
